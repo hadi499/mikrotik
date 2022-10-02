@@ -1,0 +1,41 @@
+remove default configuration
+check IP -- adresses
+
+ganti password
+system -- users
+
+ganti nama 
+system -- identity
+
+SETTING WAN
+
+bridge
+beri nama bridge-WAN
+pilih port
+
+
+IP -- dhcp client -- add -- pilih interface(bridge-WAN) -- add default routes yes-- sampai bond
+check IP -- adresses
+check IP -- gateway
+tes dengan ping 8.8.8.8
+
+
+SETTING LAN
+
+bridge
+beri nama bridge-LAN
+pilih port
+
+IP -- adresses -- add
+IP -- dhcp server -- dhcp setup
+
+
+
+IP -- firewall -- NAT -- add
+
+general
+chain : srcnat
+out interface bridge-WAN
+
+Action : masquerade
+
